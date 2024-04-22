@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Frontend Mentor | FAQ accordion</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        /* COLORS */
+        --grayish-purple: hsl(292, 16%, 49%);
+        --light-pink: hsl(275, 100%, 97%);
+        --dark-purple: hsl(292, 42%, 14%);
+
+        /* FONTS */
+        --work-sans-font: "Work Sans", sans-serif;
+      }
+
+      body {
+        background-image: url(assets/images/background-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: var(--light-pink);
+        font-family: var(--work-sans-font);
+      }
+
+      /* FAQ Card */
+      .faq {
+        width: 32rem;
+        height: auto;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 1rem;
+        padding: 1.5rem;
+      }
+
+      .title-sect{
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .icon-star {
+        height: 2rem;
+        margin-right: 1rem;
+      }
+
+      .title {
+        font-size: 2.2rem;
+        color: var(--dark-purple);
+      }
+
+      .faq-info {
+        margin: 1rem 0;
+      }
+
+      .question-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2rem;
+        cursor: pointer;
+      }
+
+      .faq-question {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--dark-purple);
+        margin-bottom: .5rem;
+      }
+
+      .question-div:hover .faq-question {
+        color: #AD28EB;
+      }
+
+      .faq-answer {
+        font-size: .9rem;
+        color: var(--grayish-purple);
+        margin-bottom: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease;
+      }
+
+      .open-faq, .close-faq {
+        height: 1.5rem;
+      }
+
+      .invisible {
+        display: none;
+      }
+
+      .visible {
+        max-height: 20rem;
+        animation: fade-in 1s ease-in-out;
+      }
+
+      .fade-out{
+        animation: fade-out 1s ease-in-out;
+      }
+
+      .attribution {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+
+      @keyframes fade-out { 
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- FAQ Card-->
+    <article class="faq">
+
+      <!-- Title -->
+      <div class="title-sect">
+        <img
+          src="assets/images/icon-star.svg"
+          alt="Icon Star"
+          class="icon-star"
+        />
+        <h1 class="title">FAQs</h1>
+      </div>
+
+      <!-- All FAQ questions and answers-->
+
+      <!-- #1 -->
+      <div class="faq-info">
+        <div class="question-div">
+          <h2 class="faq-question">
+            What is Frontend Mentor, and how will it help me?
+          </h2>
+          <img
+            src="assets/images/icon-minus.svg"
+            alt="Close FAQ"
+            class="close-faq invisible"
+          />
+          <img
+            src="assets/images/icon-plus.svg"
+            alt="Open FAQ"
+            class="open-faq"
+          />
+        </div>
+        <p class="faq-answer">
+          Frontend Mentor offers realistic coding challenges to help developers
+          improve their frontend coding skills with projects in HTML, CSS, and
+          JavaScript. It's suitable for all levels and ideal for portfolio
+          building.
+        </p>
+      </div>
+
+      <hr />
+
+      <!-- #2 -->
+      <div class="faq-info">
+        <div class="question-div">
+          <h2 class="faq-question">Is Frontend Mentor free?</h2>
+          <img
+            src="assets/images/icon-minus.svg"
+            alt="Close FAQ"
+            class="close-faq invisible"
+          />
+          <img
+            src="assets/images/icon-plus.svg"
+            alt="Open FAQ"
+            class="open-faq"
+          />
+        </div>
+        <p class="faq-answer">
+          Yes, Frontend Mentor offers both free and premium coding challenges,
+          with the free option providing access to a range of projects suitable
+          for all skill levels.
+        </p>
+      </div>
+
+      <hr />
+
+      <!-- #3 -->
+      <div class="faq-info">
+        <div class="question-div">
+          <h2 class="faq-question">
+            Can I use Frontend Mentor projects in my portfolio?
+          </h2>
+          <img
+            src="assets/images/icon-minus.svg"
+            alt="Close FAQ"
+            class="close-faq invisible"
+          />
+          <img
+            src="assets/images/icon-plus.svg"
+            alt="Open FAQ"
+            class="open-faq"
+          />
+        </div>
+        <p class="faq-answer">
+          Yes, you can use projects completed on Frontend Mentor in your
+          portfolio. It's an excellent way to showcase your skills to potential
+          employers!
+        </p>
+      </div>
+
+      <hr />
+
+      <!-- #4 -->
+      <div class="faq-info">
+        <div class="question-div">
+          <h2 class="faq-question">
+            How can I get help if I'm stuck on a challenge?
+          </h2>
+          <img
+            src="assets/images/icon-minus.svg"
+            alt="Close FAQ"
+            class="close-faq invisible"
+          />
+          <img
+            src="assets/images/icon-plus.svg"
+            alt="Open FAQ"
+            class="open-faq"
+          />
+        </div>
+        <p class="faq-answer">
+          The best place to get help is inside Frontend Mentor's Discord
+          community. There's a help channel where you can ask questions and seek
+          support from other community members.
+        </p>
+      </div>
+    </article>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/ponkydev">Angel Henriquez</a>.
+    </div>
+
+    <script>
+      const faqInfo = document.querySelectorAll(".faq-info");
+      const faqs = document.querySelectorAll(".faq-answer");
+      const openIcon = document.querySelectorAll(".open-faq");
+      const closeIcon = document.querySelectorAll(".close-faq");
+
+      for (i=0; i < faqInfo.length; i++) {
+        let faq = faqInfo[i];
+        let answer = faqs[i];
+        let open = openIcon[i];
+        let close = closeIcon[i];
+
+        faq.addEventListener("click", () => {
+          if (answer.classList.contains("visible")) {
+            // If FAQ is already opened
+            answer.classList.toggle("visible");
+            answer.classList.add("fade-out");
+            open.classList.remove("invisible");
+            close.classList.add("invisible");
+          } else {
+            // If FAQ is not opened yet
+            answer.classList.toggle("visible");
+            answer.classList.remove("fade-out");
+            open.classList.add("invisible");
+            close.classList.remove("invisible");
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
